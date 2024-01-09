@@ -1,6 +1,6 @@
 /***********************************************************************
 Write a function named: coinCollector(numCoins). The coinCollector function will
-accept a number of coins (greater that 0) to collect when it is first invoked
+accept a number of coins (greater than 0) to collect when it is first invoked
 and will return a function. The function returned by coinCollector can then be
 invoked numCoins number of times passing in one coin (represented by an int) to
 be added to the collection.
@@ -26,6 +26,15 @@ Example 3:
 ***********************************************************************/
 function coinCollector(numCoins) {
   // Your code here
+  const allCoins = [];
+  while (allCoins.length < numCoins) {
+    return (newCoin) => {
+      allCoins.push(newCoin);
+      if (allCoins.length === numCoins) {
+        return allCoins;
+      }
+    }
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
